@@ -1,6 +1,6 @@
 import './card.css'
 
-const Card = ({ articles }) => {
+const Card = (props) => {
     const styleImage = {
         width: '250px',
         height: '200px',
@@ -22,12 +22,12 @@ const Card = ({ articles }) => {
         alignItems: 'center',
     }
 
-    const array = articles.map(article => {
+    const array = props.articles.map(article => {
         return (
             <div style={cards} key={article.id}>
                 <a 
                     href={article.url}
-                    className='link'
+                    className={props.toggleDarkMode ? 'link' : 'linkDark'}
                     target='_blank'
                 >
                     <div style={flex}>

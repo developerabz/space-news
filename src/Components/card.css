@@ -16,6 +16,20 @@
     color: black
 }
 
+.linkDark:link,
+.linkDark:visited {
+    text-decoration: none;
+    color: white;
+}
+
+.linkDark:hover,
+.linkDark:active {
+    text-decoration: underline;
+    color: white
+}
+
+
+
 span {
     font-style: italic;
 }
