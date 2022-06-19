@@ -8,6 +8,14 @@ const Header = (props) => {
         padding: '12px',
     }
 
+    const headerStyleDark = {
+        display: 'flex',
+        justifyContent: 'space-around',
+        alignItems: 'center',
+        background: 'navy',
+        padding: '12px',
+    }
+
 
 
     const fontStyle = {
@@ -31,7 +39,6 @@ const Header = (props) => {
     const circleRight = {
         width: '20px',
         height: '20px',
-        // border: '1px solid green',
         borderRadius: '100%',
         background: 'white',
         position: 'absolute',
@@ -46,8 +53,17 @@ const Header = (props) => {
         position: 'absolute',
         right: '50%'
     }
+
+    const word = {
+        margin: '0'
+    }
+
+    const wordDark = {
+        margin: '0',
+        color: 'white'
+    }
     return (
-        <header style={headerStyle}>
+        <header style={props.toggleDarkMode ? headerStyle : headerStyleDark}>
             <a href="./">
                 <img
                     src='https://cdn-icons-png.flaticon.com/512/1067/1067256.png'
@@ -55,8 +71,13 @@ const Header = (props) => {
                 />
             </a>
             <h1 style={props.toggleDarkMode ? fontStyle : fontStyleDark}>SPACE KING</h1>
-            <div style={oval} onClick={props.handleToggle}>
-                <span style={props.toggleDarkMode ? circleLeft : circleRight}></span>
+            <div>
+                <div style={oval} onClick={props.handleToggle}>
+                    <span style={props.toggleDarkMode ? circleLeft : circleRight}></span>
+                </div>
+                <p style={props.toggleDarkMode ? word : wordDark}>
+                    {props.toggleDarkMode ? 'Light' : 'Dark'}
+                </p>
             </div>
         </header>
     )

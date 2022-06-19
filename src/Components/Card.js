@@ -17,6 +17,16 @@ const Card = (props) => {
         background: 'lightblue',
     }
 
+    const cardsDark = {
+        width: '500px',
+        height: 'fit-content',
+        border: '2px solid gray',
+        margin: '10px',
+        padding: '10px',
+        borderRadius: '15px',
+        background: 'navy',
+    }
+
     const flex = {
         display: 'flex',
         alignItems: 'center',
@@ -24,7 +34,7 @@ const Card = (props) => {
 
     const array = props.articles.map(article => {
         return (
-            <div style={cards} key={article.id}>
+            <article style={props.toggleDarkMode ? cards : cardsDark} key={article.id}>
                 <a 
                     href={article.url}
                     className={props.toggleDarkMode ? 'link' : 'linkDark'}
@@ -41,7 +51,7 @@ const Card = (props) => {
                     </div>
                     <p>{article.summary}</p>
                 </a>
-            </div>
+            </article>
         )
       })
     return (
