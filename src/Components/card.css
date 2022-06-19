@@ -1,0 +1,21 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.link:link,
+.link:visited {
+    text-decoration: none;
+    color: black;
+}
+
+.link:hover,
+.link:active {
+    text-decoration: underline;
+    color: black
+}
+
+span {
+    font-style: italic;
+}
