@@ -6,6 +6,7 @@ export default defineConfig({
   build: { // to output your build into build dir the same as Webpack
     outDir: 'build',
     sourcemap: true,
+    base: "/space-news/"
   },
   server: {
     open: true,
