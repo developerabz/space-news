@@ -3,10 +3,10 @@ import { defineConfig } from 'vite';
 
 export default defineConfig({
   plugins: [react()],
+  base: "/space-news/",
   build: { // to output your build into build dir the same as Webpack
-    outDir: 'build',
+    outDir: 'dist',
     sourcemap: true,
-    base: "/space-news/"
   },
   server: {
     open: true,
